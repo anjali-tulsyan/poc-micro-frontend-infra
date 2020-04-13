@@ -1,0 +1,36 @@
+.app-wrapper {
+	
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+
+	.header, .footer {
+		height : 200px;
+	}
+
+	.header {
+		border-bottom: 1px dotted grey;
+	}
+
+	.footer {
+		border-top: 1px dotted grey;
+	}
+
+	.main-body {
+		padding: 50px;
+		flex-grow: 1;
+		overflow: scroll;
+	}
+
+	.dashboard {
+		display: flex;
+    	justify-content: space-between;
+
+    	> * {
+    		border: 1px dotted grey;
+    		padding: 10px;
+    	}
+	}
+
+}

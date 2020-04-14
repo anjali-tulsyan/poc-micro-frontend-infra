@@ -13,13 +13,13 @@ import Lending from './components/Lending';
 import Dashboard from './components/Dashboard';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 import { Button, ButtonGroup } from '@material-ui/core';
-//import Toast from './utils/Toast';
+import * as singleSpa from 'single-spa';
+import {registerReactApp} from "./single-spa/react-app";
 
 const store = createStore(rootReducer);
  
 
 const wrapper = document.getElementById("container");
-//Toast("hello");
 
 const App = () => (
   <ApolloProvider client={client}>
@@ -56,3 +56,7 @@ const App = () => (
 
 
 wrapper ? ReactDOM.render(<App />, wrapper) : false;
+
+registerReactApp();
+
+singleSpa.start();

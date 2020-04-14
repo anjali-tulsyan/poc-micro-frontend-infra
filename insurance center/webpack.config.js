@@ -46,5 +46,9 @@ module.exports = {
       filename: "./index.html"
     }),
     //"@babel/plugin-transform-runtime"
-  ]
+  ],
+  output: {
+      library: "insuranceCenter",
+      libraryTarget: "window"
+  }
 };

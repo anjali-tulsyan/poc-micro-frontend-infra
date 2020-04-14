@@ -1,42 +1,37 @@
 import React, { Component } from 'react';
 
-const InsuranceCenter = () => {
 
-	 const existingScript = document.getElementById('insuranceCenter');
+class InsuranceCenter extends React.Component {
+  componentDidMount() {
+     
+    const existingScript = document.getElementById('script-insurance-center');
 
-	 if (!existingScript) {
-	     const script = document.createElement('script');
+    if (existingScript) {
+      this.renderMicroFrontend();
+      return;
+    }
+
+    const script = document.createElement('script');
 	     script.src = 'http://localhost:3000/main.js';
-	     script.id = 'insuranceCenter';
+	     script.id = 'script-insurance-center';
+	     script.onload = this.renderMicroFrontend;
 	     document.body.appendChild(script);
+  }
 
-	     script.onload = () => {
-	       if (callback) callback();
-	     };
-	   }
+  componentWillUnmount() {
+    
+    window.unmountInsuranceCenter("insurance-center");
+  }
 
-	 return (
-	 		<insurance-center > </insurance-center>
-	 	)
-};
+  renderMicroFrontend() {
+     
+    window.renderInsuranceCenter("insurance-center");
+  };
+
+  render() {
+    return <main id="insurance-center" />;
+  }
+}
+ 
 
 export default InsuranceCenter;
-
-/// const highOrderFunction = (fn, scriptId, path) => {
-// 	const existingScript = document.getElementById(scriptId);
-
-// 	 if (!existingScript) {
-// 	     const script = document.createElement('script');
-// 	     script.src = path;
-// 	     script.id = 'insuranceCenter';
-// 	     document.body.appendChild(script);
-
-// 	     script.onload = () => {
-// 	       if (callback) callback();
-// 	     };
-// 	   }
-
-// 	return fn;
-// } 
-
-// export default highOrderFunction(InsuranceCenter, "insuranceCenter","http://localhost:3000/main.js");

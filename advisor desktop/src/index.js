@@ -57,6 +57,6 @@ const App = () => (
 
 wrapper ? ReactDOM.render(<App />, wrapper) : false;
 
-registerReactApp();
+// registerReactApp();
 
-singleSpa.start();
+// singleSpa.start();

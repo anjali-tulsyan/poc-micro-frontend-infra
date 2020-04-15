@@ -9,24 +9,28 @@ const reactLifecycles = singleSpaReact({
     React,
     ReactDOM,
     rootComponent,
-    domElementGetter: () => document.getElementById('insurance-center')
+    parcelCanUpdate: true
 });
 
 export const bootstrap = [
     reactLifecycles.bootstrap,
 ];
 
-export const mount = [
-    reactLifecycles.mount,
-];
+export async function mount(props) {
+    return reactLifecycles.mount(props);
+}
 
 export const unmount = [
     reactLifecycles.unmount,
 ];
 
 
-singleSpa.registerApplication('insurance-center', Promise.resolve({ bootstrap,mount, unmount}), (pathName) => true);
+export const update = [
+  reactLifecycles.update
+];
 
-singleSpa.start();
+// singleSpa.registerApplication('insurance-center', Promise.resolve({ bootstrap,mount, unmount}), (pathName) => true);
+
+// singleSpa.start();
 
 

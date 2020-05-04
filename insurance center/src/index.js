@@ -2,13 +2,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
-import rootComponent from './App';
+import RootComponent from './App';
 import * as singleSpa from "single-spa";
+
+const wrapper = document.getElementById("insurance-center");
 
 const reactLifecycles = singleSpaReact({
     React,
     ReactDOM,
-    rootComponent,
+    rootComponent: RootComponent,
     parcelCanUpdate: true
 });
 
@@ -28,6 +30,8 @@ export const unmount = [
 export const update = [
   reactLifecycles.update
 ];
+
+wrapper ? ReactDOM.render(<RootComponent />, wrapper) : false;
 
 // singleSpa.registerApplication('insurance-center', Promise.resolve({ bootstrap,mount, unmount}), (pathName) => true);
 

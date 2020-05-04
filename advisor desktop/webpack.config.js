@@ -46,5 +46,14 @@ module.exports = {
       filename: "./index.html"
     }),
     //"@babel/plugin-transform-runtime"
-  ]
+  ],
+  output: {
+      libraryTarget: "umd"
+  },
+   externals: {
+    'react' : "React",
+    'react-dom': "ReactDOM",
+    'lending':"lending",
+    'insuranceCenter': "insuranceCenter"
+  }
 };

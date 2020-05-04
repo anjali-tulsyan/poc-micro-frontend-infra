@@ -3,7 +3,10 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   devServer: {
     historyApiFallback: true,
-    port: 3000
+    port: 3000,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    }
   },
   devtool: 'source-map',
   module: {
@@ -48,7 +51,10 @@ module.exports = {
     //"@babel/plugin-transform-runtime"
   ],
   output: {
-      library: "insuranceCenter",
-      libraryTarget: "window"
+      libraryTarget: "umd"
+  },
+  externals: {
+    'react' : "React",
+    'react-dom': "ReactDOM"
   }
 };

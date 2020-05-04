@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import Form from "./components/Form";
 import { ApolloProvider } from '@apollo/client';
 import client from './apollo/client';

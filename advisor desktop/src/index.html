@@ -5,10 +5,26 @@
     <base href="/">
     <title>Advisor Desktop - through web components</title>
     <script src="https://unpkg.com/regenerator-runtime@0.13.1/runtime.js"></script>
-    <!-- <script src="http://localhost:3000/main.js"> </script> -->
-    <!-- <script src="http://localhost:3001/main.js"> </script> -->
+     <script type="systemjs-importmap">
+    {
+      "imports": {
+        "react": "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+        "React": "https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js",
+        "ReactDOM": "https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js",
+        "lending" : "http://localhost:3001/main.js",
+        "insuranceCenter" : "http://localhost:3000/main.js",
+        "advisorDesktopContainer": "./main.js "
+      }
+    }
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/amd.js"></script>
 </head>
 <body>
 <div id="container"></div>
 </body>
+<script>
+    System.import('advisorDesktopContainer');
+ </script>
 </html>

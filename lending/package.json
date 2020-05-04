@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
+    "try": "start npm run start:dev"
   },
   "author": "",
   "license": "ISC",
@@ -39,6 +41,7 @@
     "apollo-link-state": "^0.4.2",
     "graphql-tag": "^2.10.3",
     "html-to-react": "^1.4.2",
+    "npm-start": "^1.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",

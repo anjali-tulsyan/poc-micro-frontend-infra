@@ -3,9 +3,9 @@ import Parcel from 'single-spa-react/parcel';
 import { mountRootParcel } from 'single-spa';
 
 
-const loadReactAppLending = async () => {
-     await runScript('http://localhost:3001/main.js', "script-lending");
-    return window.lending;
+const loadReactAppLending = () => {
+    return System.import('lending')
+    
 };
 
 
@@ -23,6 +23,8 @@ const runScript = async (url, id) => {
 		  const firstScript = document.getElementsByTagName('script')[0];
 		  firstScript.parentNode.insertBefore(script, firstScript);
 		  
+	  	} else {
+	  		resolve();
 	  	}
 
     });
